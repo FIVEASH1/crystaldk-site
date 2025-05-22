@@ -1,109 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CrystalDK</title>
-<style>
-  body {
-    margin: 0; font-family: Arial, sans-serif;
-  }
-  /* Плашка сверху */
-  header {
-    background: #111;
-    color: white;
-    padding: 15px 20px;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  /* Кнопка меню */
-  #menuBtn {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  /* Меню */
-  #menu {
-    position: fixed;
-    top: 60px; /* под шапкой */
-    left: 0;
-    right: 0;
-    background: #222;
-    color: white;
-    display: none;
-    flex-direction: column;
-    padding: 10px 0;
-    z-index: 999;
-  }
-  #menu a {
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-bottom: 1px solid #444;
-  }
-  #menu a:hover {
-    background: #444;
-  }
-
-  /* Отступ сверху, чтобы контент не прятался под фиксированной шапкой */
-  main {
-    padding-top: 70px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrystalDK</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Шапка -->
+  <header>
+    <button id="menu-toggle" class="menu-button">
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+  </header>
 
-<header>
-  <button id="menuBtn" aria-expanded="false" aria-controls="menu">Меню</button>
-</header>
+  <!-- Меню -->
+  <nav id="menu" class="hidden">
+    <ul>
+      <li><a href="index.html">Главная страница</a></li>
+      <li><a href="schedule.html">Ближайшие события</a></li>
+      <li><a href="atmosphere.html">Атмосфера</a></li>
+      <li><a href="hallmap.html">3D схема залов</a></li>
+      <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
 
-<nav id="menu" role="menu" aria-labelledby="menuBtn">
-  <a href="#home" role="menuitem">Главная</a>
-  <a href="#schedule" role="menuitem">Расписание</a>
-  <a href="#studio" role="menuitem">Фотостудия</a>
-  <a href="#rental" role="menuitem">Аренда</a>
-  <a href="#history" role="menuitem">История</a>
-  <a href="#contacts" role="menuitem">Контакты</a>
-</nav>
+  <!-- Контент -->
+  <main>
+    <section class="block">
+      <h1>CrystalDK</h1>
+      <p>Добро пожаловать на главный лендинг.</p>
+    </section>
+  </main>
 
-<main>
-  <section id="home"><h1>Главная</h1><p>Содержимое главной</p></section>
-  <section id="schedule"><h1>Расписание</h1><p>Содержимое расписания</p></section>
-  <section id="studio"><h1>Фотостудия</h1><p>Содержимое фотостудии</p></section>
-  <section id="rental"><h1>Аренда</h1><p>Содержимое аренды</p></section>
-  <section id="history"><h1>История</h1><p>Содержимое истории</p></section>
-  <section id="contacts"><h1>Контакты</h1><p>Содержимое контактов</p></section>
-</main>
+  <footer>
+    <p>Тел: +7 989 577 89 92 | Email: hello@crystaldk.com</p>
+  </footer>
 
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const menu = document.getElementById('menu');
-
-  menuBtn.addEventListener('click', () => {
-    const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-    menuBtn.setAttribute('aria-expanded', !expanded);
-    if (!expanded) {
-      menu.style.display = 'flex';
-    } else {
-      menu.style.display = 'none';
-    }
-  });
-
-  // Закрыть меню, если клик вне меню и кнопки
-  document.addEventListener('click', (e) => {
-    if (!menu.contains(e.target) && e.target !== menuBtn) {
-      menu.style.display = 'none';
-      menuBtn.setAttribute('aria-expanded', 'false');
-    }
-  });
-</script>
-
+  <script src="scripts.js"></script>
 </body>
 </html>
