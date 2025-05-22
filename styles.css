@@ -24,7 +24,7 @@ header {
 
 /* Логотип по центру */
 .logo-link {
-  position: absolute;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
   height: 50px;
