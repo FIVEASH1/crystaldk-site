@@ -9,14 +9,17 @@
 <body>
   <!-- Шапка -->
   <header>
-    <button id="menu-toggle" class="menu-button">
+    <a href="index.html" class="logo-link">
+      <img src="logo.png" alt="CrystalDK Logo" class="logo" />
+    </a>
+    <button id="menu-toggle" class="menu-button" aria-label="Открыть меню">
       <span class="line"></span>
       <span class="line"></span>
     </button>
   </header>
 
   <!-- Меню -->
-  <nav id="menu" class="hidden">
+  <nav id="menu" class="hidden" aria-hidden="true">
     <ul>
       <li><a href="index.html">Главная страница</a></li>
       <li><a href="schedule.html">Ближайшие события</a></li>
