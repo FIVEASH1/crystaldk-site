@@ -2,16 +2,17 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CrystalDK</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Всплывающее окно Telegram -->
-  <div class="telegram-popup" id="telegram-popup">
-    <p>Подпишись на наш Telegram, чтобы не пропускать события!</p>
-    <a href="https://t.me/crystaldk" target="_blank">Перейти в Telegram</a>
-    <button onclick="closePopup()">×</button>
+
+  <!-- Фоновой контейнер с 3 фоновыми картинками -->
+  <div id="background-container">
+    <div class="bg-image active" style="background-image: url('bg1.jpg');"></div>
+    <div class="bg-image" style="background-image: url('bg2.jpg');"></div>
+    <div class="bg-image" style="background-image: url('bg3.jpg');"></div>
   </div>
 
   <!-- Хедер -->
@@ -25,73 +26,195 @@
       <a href="#history">История</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <a class="telegram-icon" href="https://t.me/crystaldk" target="_blank">Telegram</a>
+    <a class="telegram-icon" href="https://t.me/crystaldk" target="_blank" rel="noopener">Telegram</a>
   </header>
 
   <!-- Главная секция -->
   <section id="home">
-    <div class="hero">
-      <h1>CrystalDK — пространство звука, света и свободы</h1>
-      <p>Концерты, вечеринки, выставки и фотостудии в индустриальной архитектуре</p>
-    </div>
+    <h1>CrystalDK — пространство звука, света и свободы</h1>
+    <p>Концерты, вечеринки, выставки и фотостудии в индустриальной архитектуре</p>
 
-    <section class="upcoming-events">
+    <div class="upcoming-events">
       <h2>Ближайшие события</h2>
       <div class="events-grid">
-        <div class="event-card">
+        <article class="event-card">
           <img src="event1.jpg" alt="Event 1" />
           <div class="event-info">
-            <h3>Название ивента</h3>
-            <p>Дата, время</p>
-            <p>Лайнап</p>
+            <h3>Вечеринка Bass Night</h3>
+            <p>25 мая, 22:00</p>
+            <p>DJ Alex, DJ Mike</p>
             <a href="#">Купить билет</a>
           </div>
-        </div>
+        </article>
+        <article class="event-card">
+          <img src="event2.jpg" alt="Event 2" />
+          <div class="event-info">
+            <h3>Концерт Electro Wave</h3>
+            <p>30 мая, 20:00</p>
+            <p>Группа Neon Lights</p>
+            <a href="#">Купить билет</a>
+          </div>
+        </article>
+        <article class="event-card">
+          <img src="event3.jpg" alt="Event 3" />
+          <div class="event-info">
+            <h3>Выставка Свет и Тени</h3>
+            <p>5 июня, 18:00</p>
+            <p>Арт-проект Crystal Art</p>
+            <a href="#">Подробнее</a>
+          </div>
+        </article>
       </div>
       <a class="button" href="#schedule">Полное расписание</a>
-    </section>
+    </div>
 
-    <section class="photo-gallery">
+    <div class="photo-gallery">
       <h2>Атмосфера</h2>
       <div class="gallery">
         <img src="party1.jpg" alt="Party" />
         <img src="concert1.jpg" alt="Concert" />
         <img src="art1.jpg" alt="Art" />
       </div>
-    </section>
+    </div>
 
-    <section class="hall-map">
+    <div class="hall-map">
       <h2>3D-схема залов</h2>
       <img src="hall-map.png" alt="Схема залов" />
       <p>Кликните на зал, чтобы узнать размер и назначение</p>
-    </section>
+    </div>
   </section>
 
-  <footer id="contacts">
-    <div class="contact-info">
-      <p>Тел: +7 989 577 89 92</p>
-      <p>Email: hello@crystaldk.com</p>
-      <p>Адрес: Москва, ул. Примерная 12</p>
-      <div class="socials">
-        <a href="https://t.me/crystaldk">Telegram</a>
-        <a href="https://instagram.com">Instagram</a>
-        <a href="https://vk.com">VK</a>
-      </div>
+  <!-- Расписание -->
+  <section id="schedule">
+    <h2>Расписание ивентов</h2>
+    <ul class="schedule-list">
+      <li>
+        <img src="event1.jpg" alt="Event 1" />
+        <div>
+          <strong>25 мая</strong> — Вечеринка Bass Night<br />
+          DJ Alex, DJ Mike — 22:00<br />
+          <a href="#">Купить билет</a>
+        </div>
+      </li>
+      <li>
+        <img src="event2.jpg" alt="Event 2" />
+        <div>
+          <strong>30 мая</strong> — Концерт Electro Wave<br />
+          Группа Neon Lights — 20:00<br />
+          <a href="#">Купить билет</a>
+        </div>
+      </li>
+      <li>
+        <img src="event3.jpg" alt="Event 3" />
+        <div>
+          <strong>5 июня</strong> — Выставка Свет и Тени<br />
+          Арт-проект Crystal Art — 18:00<br />
+          <a href="#">Подробнее</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Фотостудия -->
+  <section id="studio">
+    <h2>Фотостудии</h2>
+    <div class="studio-tabs">
+      <button data-tab="studio1" class="active">Студия 1</button>
+      <button data-tab="studio2">Студия 2</button>
+      <button data-tab="studio3">Студия 3</button>
     </div>
-    <div class="map">
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aexample" width="100%" height="300"></iframe>
+    <div class="studio-content active" id="studio1">
+      <img src="studio1.jpg" alt="Студия 1" />
+      <p>Размер: 20м². Освещение: LED-панели, софтбоксы.</p>
+      <p>Цена: 3000₽/час</p>
+      <h3>Техрайдер</h3>
+      <ul>
+        <li>Камера Sony A7III</li>
+        <li>Штатив Manfrotto</li>
+        <li>Осветительные приборы</li>
+      </ul>
+      <p>Контакты для бронирования: <a href="mailto:studio@crystaldk.com">studio@crystaldk.com</a></p>
+    </div>
+    <div class="studio-content" id="studio2">
+      <img src="studio2.jpg" alt="Студия 2" />
+      <p>Размер: 30м². Освещение: Студийные лампы, софтбоксы.</p>
+      <p>Цена: 4000₽/час</p>
+      <h3>Техрайдер</h3>
+      <ul>
+        <li>Камера Canon EOS R</li>
+        <li>Рефлекторы</li>
+        <li>Осветительные приборы</li>
+      </ul>
+      <p>Контакты для бронирования: <a href="mailto:studio@crystaldk.com">studio@crystaldk.com</a></p>
+    </div>
+    <div class="studio-content" id="studio3">
+      <img src="studio3.jpg" alt="Студия 3" />
+      <p>Размер: 25м². Освещение: LED-панели, кольцевые лампы.</p>
+      <p>Цена: 3500₽/час</p>
+      <h3>Техрайдер</h3>
+      <ul>
+        <li>Камера Nikon D850</li>
+        <li>Штативы</li>
+        <li>Осветительные приборы</li>
+      </ul>
+      <p>Контакты для бронирования: <a href="mailto:studio@crystaldk.com">studio@crystaldk.com</a></p>
+    </div>
+  </section>
+
+  <!-- Аренда под ивенты -->
+  <section id="rental">
+    <h2>Аренда под ивенты</h2>
+    <a href="crystaldk_presentation.pdf" download class="button">Скачать презентацию</a>
+    <div class="event-photos">
+      <img src="event-rent1.jpg" alt="Ивент 1" />
+      <img src="event-rent2.jpg" alt="Ивент 2" />
+    </div>
+    <h3>Техрайдер</h3>
+    <ul>
+      <li>Звуковое оборудование</li>
+      <li>Световое оборудование</li>
+      <li>Проекционное оборудование</li>
+    </ul>
+    <p>Контакты: <a href="mailto:rental@crystaldk.com">rental@crystaldk.com</a></p>
+  </section>
+
+  <!-- История -->
+  <section id="history">
+    <h2>История CrystalDK</h2>
+    <p>CrystalDK начал свою работу в 2010 году...</p>
+    <div class="history-gallery">
+      <img src="history1.jpg" alt="Архив 1" />
+      <img src="history2.jpg" alt="Архив 2" />
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <footer id="contacts">
+    <h2>Контакты</h2>
+    <p>Телефон: +7 989 577 89 92</p>
+    <p>Email: hello@crystaldk.com</p>
+    <p>Адрес: Москва, ул. Примерная 12</p>
+    <div class="socials">
+      <a href="https://t.me/crystaldk" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://instagram.com/crystaldk" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://vk.com/crystaldk" target="_blank" rel="noopener">VK</a>
+    </div>
+    <div class="map-container">
+      <iframe
+        src="https://yandex.ru/map-widget/v1/?um=constructor%3Aexample"
+        width="100%" height="300" frameborder="0"
+        allowfullscreen>
+      </iframe>
     </div>
   </footer>
 
-  <script>
-    function closePopup() {
-      document.getElementById('telegram-popup').style.display = 'none';
-    }
-    window.onload = function () {
-      setTimeout(() => {
-        document.getElementById('telegram-popup').style.display = 'block';
-      }, 1500);
-    };
-  </script>
+  <!-- Всплывающее окно Telegram -->
+  <div class="telegram-popup" id="telegram-popup">
+    <p>Подпишись на наш Telegram, чтобы не пропускать события!</p>
+    <a href="https://t.me/crystaldk" target="_blank" rel="noopener">Перейти в Telegram</a>
+    <button onclick="closePopup()">×</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
